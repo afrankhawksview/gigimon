@@ -11,7 +11,8 @@
 	</div>
 	<div id="log">
 	</div>
-	<p class="attack">Attack</p>
+	<p class="p1attack">P1 Attack</p>
+	<p class="p2attack">P2 Attack</p>
 
 </body>
 </html>
