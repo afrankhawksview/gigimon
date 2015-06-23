@@ -5,6 +5,10 @@
 	<script src="gigimon.js"></script>
 </head>
 <body>
+	<div id="player1">
+	</div>
+	<div id="player2">
+	</div>
 	<div id="log">
 	</div>
 	<p class="attack">Attack</p>
