@@ -1,0 +1,14 @@
+#battlefield {
+	height:100px;
+	background:lightgrey;
+}
+.mon {
+	display:inline-block;
+	color:red;
+}
+#log {
+	height:100px;
+}
+.controlarea {
+	clear:both;
+}
