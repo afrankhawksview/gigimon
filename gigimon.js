@@ -1,35 +1,55 @@
 $(document).ready(function(){
 
- var p1 = {
- 	name:"Gigi",
+var gigimon = {};
+
+ gigimon.p1 = {
+ 	name:'Gigi',
  	hp:100,
  	attack:10
  };
 
- var p2 = {
- 	name:"Pikachu",
+ gigimon.p2 = {
+ 	name:'Pikachu',
  	hp:90,
  	attack:10
  };
 
- function attack(attacker,defender){
- 	defender["hp"] = defender["hp"] - attacker["attack"];
- 	return defender["hp"];
- }
 
- $('#player1').html("<p>Player 1 "+p1["name"]+" "+p1["hp"]+"</p>");
- $('#player2').html("<p>Player 2 "+p2["name"]+" "+p2["hp"]+"</p>");
+ gigimon.attack = function( attacker , defender ){
+
+ 	defender.hp = defender.hp - attacker.attack;
+
+ 	$('#log').html('<p>'+ attacker.name + ' Attacks!</p>');
+ 	$('#log').append('<p>'+attacker.name +' attacked for '+ attacker.attack +' damage!</p>');
+ 	$('#log').append('<p>'+defender.name +' has '+ defender.hp +' health!</p>');
+
+ 	$('#player1').html('<p>Player 1 '+gigimon.p1.name+' '+gigimon.p1.hp+'</p>');
+	$('#player2').html('<p>Player 2 '+gigimon.p2.name+' '+gigimon.p2.hp+'</p>');
+
+ 	};
+
+ gigimon.win = function( winner , loser ){
+ 		$('#log').html('<p>' + loser.name + ' has fainted!<br>' +  winner.name + ' wins!</p>');
+ 	};
+
+
+
+
+ $('#player1').html('<p>Player 1 '+gigimon.p1.name+' '+gigimon.p1.hp+'</p>');
+ $('#player2').html('<p>Player 2 '+gigimon.p2.name+' '+gigimon.p2.hp+'</p>');
 
  $('.p1attack').click(function(){	
- 	$('#log').html("<p>Attack!</p>");
- 	$('#log').append("<p>"+p1["name"]+" attacked for "+p1["attack"]+" damage!</p>");
- 	$('#log').append("<p>"+p2["name"]+" has "+ attack(p1,p2) +" health!</p>");
+ 	gigimon.attack(gigimon.p1, gigimon.p2);
+ 	if (gigimon.p2.hp <= 0) {
+ 		gigimon.win(gigimon.p1, gigimon.p2);
+ 	}
  });
 
   $('.p2attack').click(function(){	
- 	$('#log').html("<p>Attack!</p>");
- 	$('#log').append("<p>"+p2["name"]+" attacked for "+p1["attack"]+" damage!</p>");
- 	$('#log').append("<p>"+p1["name"]+" has "+ attack(p2,p1) +" health!</p>");
+ 	gigimon.attack(gigimon.p2,gigimon.p1);
+ 	if (gigimon.p1.hp <= 0) {
+ 		gigimon.win(gigimon.p2, gigimon.p1);
+ 	}
  });
 
 });
