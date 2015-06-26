@@ -33,21 +33,27 @@
 <body>
 	<div class="container-fluid">
 	<div class="row" id="battlefield">
-		<div class="col-md-6 mon" id="player1">
+		<div class="col-xs-6 mon">
+			<img src="img/02-gigi.jpg" alt="Gigi" width="100px" height="160px">
+			<article id="player1">
+			</article>
 		</div>
-		<div class="col-md-6 mon" id="player2">
+		<div class="col-xs-6 mon">
+			<img src="img/01-pikachu.png" alt="Pikachu" width="100px" height="160px">
+			<article id="player2">
+			</article>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-6 col-md-offset-3" id="log">
+		<div class="col-xs-12" id="log">
 		<p>FIGHT!</p>
 		</div>
 	</div>
 	<div class="row controlarea">
-		<div class="col-md-6">
+		<div class="col-xs-6">
 		<button class="btn btn-default p1attack">P1 Attack</button>
 		</div>
-		<div class="col-md-6">
+		<div class="col-xs-6">
 			<button class="btn btn-default p2attack">P2 Attack</button>
 		</div>
 	</div>

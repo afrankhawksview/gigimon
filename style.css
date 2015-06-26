@@ -1,14 +1,18 @@
 #battlefield {
-	height:100px;
+	padding:20px 0;
 	background:lightgrey;
 }
 .mon {
 	display:inline-block;
 	color:red;
+	text-align: center;
 }
 #log {
-	height:100px;
+	border-top:1px solid black;
+	padding:20px 0;
+	text-align: center;
 }
 .controlarea {
 	clear:both;
+	text-align: center;
 }

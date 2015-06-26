@@ -4,12 +4,12 @@ var gigimon = {};
 
  gigimon.p1 = {
  	name:'Gigi',
- 	hp:100,
- 	attack:10
+ 	hp:200,
+ 	attack:40
  };
 
  gigimon.p2 = {
- 	name:'Pikachu',
+ 	name:'Pinkachin',
  	hp:90,
  	attack:10
  };
@@ -38,14 +38,14 @@ var gigimon = {};
  $('#player1').html('<p>Player 1 '+gigimon.p1.name+' '+gigimon.p1.hp+'</p>');
  $('#player2').html('<p>Player 2 '+gigimon.p2.name+' '+gigimon.p2.hp+'</p>');
 
- $('.p1attack').click(function(){	
+ $('.p1attack').click(function(){
  	gigimon.attack(gigimon.p1, gigimon.p2);
  	if (gigimon.p2.hp <= 0) {
  		gigimon.win(gigimon.p1, gigimon.p2);
  	}
  });
 
-  $('.p2attack').click(function(){	
+  $('.p2attack').click(function(){
  	gigimon.attack(gigimon.p2,gigimon.p1);
  	if (gigimon.p1.hp <= 0) {
  		gigimon.win(gigimon.p2, gigimon.p1);
